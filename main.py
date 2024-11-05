@@ -1,14 +1,14 @@
-f =  open("/Users/christopherhart/workspace/github.com/chart5766/bookbot/books/frankenstein.txt")
-
+# f =  open("/Users/christopherhart/workspace/github.com/chart5766/bookbot/books/frankenstein.txt")
+f = open("/Users/christopherhart/workspace/bootdev/bookbot/books/frankenstein.txt")
 
 dict_letters = {}
 
 
-# def count_words(f):
-#    text_read = f.read()
-#    text_split = (text_read.split())
-#    wc =  (len(text_split))
-#    print(wc)
+def count_words(f):
+   text_read = f.read()
+   text_split = (text_read.split())
+   wc =  (len(text_split))
+   return wc
 
 
 def countLetters(f):
@@ -21,15 +21,35 @@ def countLetters(f):
       else:
          dict_letters[letter] = 1
          
-   print(dict_letters)
+   return dict_letters
       
+
+
+
+
+
+
+def sortKey():
+
+   view = countLetters(f).items()
+
+   view_sorted = sorted(view, key = lambda x: x[1])
+
+   for letter, num in view_sorted:
+      if str.isalpha(letter):
+
+         print(f"The {letter} character was found {num} times")
+
+      else:
+         pass
+
+
+   
 
 
          
    
-
-countLetters(f)
-      
+sortKey()
 
          
 
